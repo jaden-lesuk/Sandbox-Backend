@@ -13,7 +13,7 @@ register.post('/register', async function(req, res) {
     const email = req.body.email
     const phonenumber = req.body.phonenumber
     const password =  req.body.password;
-    bcrypt.hash(password, saltRounds, function(err, hash) {
+    bcrypt.hash(password, saltRounds, async function(err, hash) {
         if(err)
         {
             console.log("eror hashing pwd \n" + err)
